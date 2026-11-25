@@ -4,7 +4,7 @@
 
 动态上下文并行（Dynamic Context Parallelism，简称 Dynamic CP 或 DCP）面向长度差异较大的变长序列训练。在每个训练步中，它根据样本长度、计算负载和单卡 token 容量重新打包数据，并为不同的 packed microbatch 选择合适的 CP 规模，以减少负载不均和不必要的上下文并行通信。
 
-当前 DAS 实现面向 Megatron Core v0.19.2，适用于采用 Transformer Engine THD attention 的 dense GPT 预训练和文本 SFT。通过独立的训练模块入口启用，使用方式见[模块 README](../../hcu_megatron/core/context_parallel/dynamic_cp/README.md)。
+当前 DAS 实现面向 Megatron Core v0.19.2，适用于采用 Transformer Engine THD attention 的 dense GPT 预训练和文本 SFT。通过独立的训练模块入口启用。
 
 ## 实现原理
 
